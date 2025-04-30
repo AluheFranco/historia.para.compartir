@@ -1,44 +1,130 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Explorando Historia</title>
-  <link rel="stylesheet" href="css/styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Explorando Historia</title>
+<style>
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+  }
+
+  h1 {
+    text-align: center;
+    color: #556b2f; /* Verde oliva oscuro */
+    margin-bottom: 30px;
+  }
+
+  /* Contenedor de las secciones */
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* Estilo para cada sección */
+  .section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+  }
+
+  .section:hover {
+    transform: translateY(-5px);
+  }
+
+  h2 {
+    color: #556b2f;
+  }
+
+  /* Botón */
+  .btn {
+    background-color: #6b8e23; /* Verde oliva */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+  }
+
+  .btn:hover {
+    background-color: #556b2f;
+  }
+
+  /* Contenido oculto */
+  .contenido {
+    display: none;
+    margin-top: 15px;
+  }
+
+  /* Imagenes */
+  .contenido img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Explorando Historia</h1>
-    <nav>
-      <ul>
-        <li><a href="#argentina">Historia Argentina</a></li>
-        <li><a href="#europa">Historia de Europa</a></li>
-        <li><a href="#asia">Historia de Asia</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section id="argentina">
-      <h2>Historia Argentina</h2>
-      <p>Contenido que vas a escribir después.</p>
-    </section>
+<h1>Explorando Historia y Cultura</h1>
 
-    <section id="europa">
-      <h2>Historia de Europa</h2>
-      <p>Contenido sobre Europa contemporánea.</p>
-    </section>
+<div class="container">
 
-    <section id="asia">
-      <h2>Historia de Asia</h2>
-      <p>Contenido sobre civilizaciones asiáticas.</p>
-    </section>
-  </main>
+  <!-- Sección Argentina -->
+  <div class="section">
+    <h2>Historia Argentina</h2>
+    <button class="btn" onclick="toggleContent('argentina')">Ver</button>
+    <div id="argentina" class="contenido">
+      <p>La historia de Argentina está marcada por su lucha por la independencia, su cultura y su evolución política a lo largo del tiempo.</p>
+      <img src="img/images.jpg" alt="Juan Manuel de Rosas" />
+    </div>
+  </div>
 
-  <footer>
-    <p>Creado por Aluhe Franco - 2025</p>
-  </footer>
+  <!-- Sección Europa -->
+  <div class="section">
+    <h2>Historia de Europa</h2>
+    <button class="btn" onclick="toggleContent('europa')">Ver</button>
+    <div id="europa" class="contenido">
+      <p>La Revolución Francesa fue un proceso social y político que transformó Francia entre 1789 y 1799. Derrocó la monarquía absoluta, proclamó la República y eliminó las bases económicas y sociales del Antiguo Régimen. Sus ideales, como la libertad, igualdad y fraternidad, influyeron en el mundo entero y marcaron el fin de la Edad Moderna y el inicio de la Contemporánea.</p>
+      <img src="img/5f15f06fb5e9a.r_d.516-211-0.jpeg" alt="Revolucion Francesa" />
+    </div>
+  </div>
 
-  <script src="js/script.js"></script>
+  <!-- Sección Asia -->
+  <div class="section">
+    <h2>Historia de Asia</h2>
+    <button class="btn" onclick="toggleContent('asia')">Ver</button>
+    <div id="asia" class="contenido">
+      <p>Asia alberga algunas de las civilizaciones más antiguas y culturas diversas del mundo, desde China hasta India y Japón.</p>
+      <img src="img/como-fue-la-historia-de-china-1.webp" alt="China Antigua" />
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function toggleContent(id) {
+    const element = document.getElementById(id);
+    if (element.style.display === "none" || element.style.display === "") {
+      element.style.display = "block";
+    } else {
+      element.style.display = "none";
+    }
+  }
+</script>
+
 </body>
 </html>
+
+
